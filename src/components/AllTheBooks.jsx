@@ -2,7 +2,7 @@ import { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import books from "../books/fantasy.json";
-import { CardGroup, Carousel } from "react-bootstrap";
+import { CardGroup } from "react-bootstrap";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -11,9 +11,9 @@ class AllTheBooks extends Component {
   render() {
     return (
       <CardGroup>
-        {books.map(BooksCover => (
-          <Row>
-            <Col lg={4}>
+        <Row lg={5}>
+          {books.map((BooksCover, index) => (
+            <Col key={index}>
               <Card style={{ width: "15rem", height: "35rem" }}>
                 <Card.Img variant="top" style={{ height: "20rem" }} src={BooksCover.img} />
                 <Card.Body>
@@ -25,8 +25,8 @@ class AllTheBooks extends Component {
                 </Card.Body>
               </Card>
             </Col>
-          </Row>
-        ))}
+          ))}
+        </Row>
       </CardGroup>
     );
   }

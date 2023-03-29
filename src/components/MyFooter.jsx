@@ -1,7 +1,7 @@
 const MyFooter = props => {
   return (
     <footer className="bg-primary" ps-3>
-      {props.email}
+      email: {props.email}
     </footer>
   );
 };
